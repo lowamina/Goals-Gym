@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Goals Gym Rajagiriya | Our Goal is Your Fitness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,700;1,800;1,900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#f5a800;--amber-d:#d48f00;--char:#3f3f42;--ink:#151515;--paper:#ffffff;--soft:#f6f4ef;--line:#e4e0d6;--muted:#6b6b70;--wa:#1faa52}
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+  a{color:inherit}
+  h1,h2,h3{font-family:'Saira',sans-serif;font-style:italic;font-weight:900;text-transform:uppercase;margin:0;line-height:.98;letter-spacing:-.005em}
+  .wrap{width:min(1120px,92vw);margin:0 auto}
+  .kick{font-family:'Saira',sans-serif;font-style:italic;font-weight:800;font-size:.95rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-d)}
+  .btn{display:inline-block;font-family:'Saira',sans-serif;font-style:italic;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem;text-decoration:none;padding:.85rem 1.6rem;border:0;cursor:pointer;clip-path:polygon(8% 0,100% 0,92% 100%,0 100%)}
+  .btn-amber{background:var(--amber);color:var(--ink)}
+  .btn-amber:hover{background:var(--amber-d)}
+  .btn-char{background:var(--char);color:#fff}
+  .btn-char:hover{background:var(--ink)}
+
+  .demo-banner{background:var(--char);color:#eee;font-size:.78rem;text-align:center;padding:.5rem 1rem}
+
+  header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;height:76px}
+  .brand img{height:48px;width:auto;display:block}
+  nav{display:flex;gap:1.6rem;align-items:center;font-weight:500;font-size:.93rem}
+  nav a{text-decoration:none}
+  nav a:hover{color:var(--amber-d)}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);padding:.45rem .8rem;font-family:inherit;font-weight:700;cursor:pointer}
+
+  /* hero: two slanted panels like the logo */
+  .hero{position:relative;background:var(--soft);overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:center;min-height:560px;padding:3rem 0}
+  .hero h1{font-size:clamp(3.2rem,8.4vw,6.4rem);margin:.8rem 0 1.1rem}
+  .hero h1 em{font-style:inherit;color:var(--amber-d)}
+  .hero p{max-width:440px;color:#3a3a3e;margin:0 0 1.8rem;font-size:1.06rem}
+  .hero .btns{display:flex;gap:.6rem;flex-wrap:wrap}
+  .panels{position:relative;height:420px}
+  .panel{position:absolute;top:0;height:100%;width:62%;transform:skewX(-12deg);overflow:hidden}
+  .panel.g{left:0;background:var(--char);top:40px;height:calc(100% - 40px)}
+  .panel.a{right:0;background:var(--amber)}
+  .panel .ph{position:absolute;inset:0 -20%;transform:skewX(12deg);background:center/cover no-repeat}
+  .panel .ph.has-img{background-image:var(--img)}
+  .panel .ph span{position:absolute;left:28%;bottom:16px;font-size:.72rem;background:rgba(0,0,0,.6);color:#fff;padding:.15rem .5rem}
+  .panel .ph.has-img span{display:none}
+  .rating{position:absolute;left:4%;bottom:-6px;background:#fff;border:1px solid var(--line);padding:.9rem 1.1rem;box-shadow:0 14px 30px rgba(0,0,0,.12);display:flex;gap:.8rem;align-items:center}
+  .rating b{font-family:'Saira',sans-serif;font-style:italic;font-weight:900;font-size:2.2rem;line-height:1}
+  .rating .stars{color:var(--amber);letter-spacing:.08em}
+  .rating small{display:block;color:var(--muted);font-size:.78rem}
+
+  section{padding:4.8rem 0}
+  .head{margin-bottom:2.4rem;max-width:620px}
+  .head h2{font-size:clamp(2.4rem,5.6vw,3.8rem);margin:.5rem 0 .7rem}
+  .head p{margin:0;color:var(--muted)}
+
+  /* goals */
+  .goals{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  .goal{border:1px solid var(--line);padding:1.6rem 1.3rem;position:relative;background:#fff}
+  .goal::before{content:"";position:absolute;left:0;top:0;width:46px;height:6px;background:var(--amber);transform:skewX(-20deg);transform-origin:left}
+  .goal .n{font-family:'Saira',sans-serif;font-style:italic;font-weight:900;font-size:2.6rem;color:var(--line);line-height:1}
+  .goal h3{font-size:1.55rem;margin:.5rem 0 .4rem}
+  .goal p{margin:0;color:var(--muted);font-size:.92rem}
+  .goal:nth-child(even)::before{background:var(--char)}
+
+  /* booking */
+  .book{background:var(--char);color:#fff}
+  .book .kick{color:var(--amber)}
+  .book .head p{color:#cfcfd3}
+  .book-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1.4rem;align-items:start}
+  .card{background:#fff;color:var(--ink);padding:1.8rem}
+  .lbl{font-family:'Saira',sans-serif;font-style:italic;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:1rem;margin:0 0 .6rem;display:block}
+  .row{margin-bottom:1.4rem}
+  .chips{display:flex;flex-wrap:wrap;gap:.45rem}
+  .chip{border:1.5px solid var(--line);background:#fff;padding:.55rem .85rem;font-family:inherit;font-weight:700;font-size:.9rem;cursor:pointer;color:var(--ink);text-align:center;line-height:1.2}
+  .chip small{display:block;font-weight:500;font-size:.72rem;color:var(--muted)}
+  .chip[aria-pressed="true"]{background:var(--amber);border-color:var(--amber)}
+  .chip[aria-pressed="true"] small{color:var(--ink)}
+  .chip:focus-visible{outline:2px solid var(--char);outline-offset:2px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .field{display:flex;flex-direction:column;gap:.3rem;margin-bottom:1rem}
+  .field label{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .field input{font:inherit;padding:.7rem .8rem;border:1.5px solid var(--line)}
+  .field input:focus{outline:2px solid var(--amber);outline-offset:0;border-color:var(--amber)}
+  .err{color:#b3261e;font-size:.88rem;min-height:1.2em;margin:0 0 .5rem}
+  .send{width:100%;background:var(--wa);color:#fff;border:0;padding:1rem;font-family:inherit;font-weight:700;font-size:1rem;cursor:pointer}
+  .send:hover{background:#178a42}
+  .sent{display:none;margin-top:.8rem;text-align:center;font-size:.9rem;color:var(--muted)}
+  .sent.show{display:block}
+  .sent a{color:var(--ink);font-weight:700}
+  .ticket{background:var(--amber);color:var(--ink);padding:1.8rem;position:sticky;top:96px}
+  .ticket h3{font-size:1.9rem;margin-bottom:1rem}
+  .ticket dl{margin:0;display:grid;gap:.6rem}
+  .ticket div{display:flex;justify-content:space-between;gap:1rem;border-bottom:1.5px dashed rgba(0,0,0,.25);padding-bottom:.5rem}
+  .ticket dt{font-weight:500}
+  .ticket dd{margin:0;font-weight:700;text-align:right}
+  .ticket p{font-size:.82rem;margin:1rem 0 0}
+
+  /* floor */
+  .floor{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .shot{aspect-ratio:4/3;background:var(--soft) center/cover no-repeat;position:relative;border:1px solid var(--line)}
+  .shot.has-img{background-image:var(--img)}
+  .shot span{position:absolute;left:10px;bottom:10px;background:var(--char);color:#fff;font-size:.72rem;padding:.15rem .5rem}
+  .shot.has-img span{display:none}
+  .shot.wide{grid-column:span 2}
+
+  /* reviews */
+  .soft{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .rev{background:#fff;border:1px solid var(--line);padding:1.5rem}
+  .rev .stars{color:var(--amber);letter-spacing:.08em}
+  .rev p{margin:.6rem 0 1rem}
+  .rev small{color:var(--muted)}
+
+  /* visit */
+  .visit{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+  .vbox{border:1px solid var(--line);padding:1.8rem}
+  .vbox dl{margin:0;display:grid;gap:1rem}
+  .vbox dt{font-family:'Saira',sans-serif;font-style:italic;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--amber-d)}
+  .vbox dd{margin:.1rem 0 0}
+  .vbox a{font-weight:700}
+  .mapbox{background:var(--char);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:1rem;padding:1.8rem}
+
+  footer{border-top:1px solid var(--line);padding:1.8rem 0;font-size:.86rem;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  footer img{height:34px}
+
+  .float-call{position:fixed;right:14px;bottom:14px;z-index:19;background:var(--amber);color:var(--ink);text-decoration:none;font-weight:700;padding:.75rem 1.1rem;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+
+  @media (max-width:940px){
+    .hero .wrap,.book-grid,.visit{grid-template-columns:1fr}
+    .panels{height:320px}
+    .goals,.revs{grid-template-columns:1fr 1fr}
+    .ticket{position:static}
+    nav{display:none}
+    nav.open{display:flex;flex-direction:column;align-items:flex-start;position:absolute;top:76px;left:0;right:0;background:#fff;padding:1rem 4vw 1.3rem;border-bottom:1px solid var(--line)}
+    .menu-btn{display:block}
+  }
+  @media (max-width:560px){
+    section{padding:3.6rem 0}
+    .brand img{height:40px}
+    .goals,.revs,.two,.floor{grid-template-columns:1fr}
+    .shot.wide{grid-column:auto}
+    .card,.ticket{padding:1.3rem}
+    .panels{height:260px}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">DEMO by Code.lowa for Goals Gym Rajagiriya. Photos, hours and reviews are placeholders. Remove this bar after approval.</div>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo.png" alt="Goals Gym, Our Goal is Your Fitness"></a>
+    <nav id="nav">
+      <a href="#goals">Goals</a>
+      <a href="#book">Free visit</a>
+      <a href="#floor">The gym</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Find us</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="kick">Rajagiriya &middot; Colombo</div>
+        <h1>Our goal is <em>your fitness.</em></h1>
+        <p>Whatever you're training for, our coaches help you set the goal and reach it. Book a free visit and see the gym for yourself.</p>
+        <div class="btns">
+          <a class="btn btn-amber" href="#book">Book a free visit</a>
+          <a class="btn btn-char" href="tel:+94763454848">Call now</a>
+        </div>
+      </div>
+      <div class="panels">
+        <div class="panel g"><div class="ph" data-img="hero-1.jpg"><span>hero-1.jpg</span></div></div>
+        <div class="panel a"><div class="ph" data-img="hero-2.jpg"><span>hero-2.jpg</span></div></div>
+        <div class="rating">
+          <b>4.9</b>
+          <div><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><small>from 291 ratings</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOALS -->
+  <section id="goals">
+    <div class="wrap">
+      <div class="head">
+        <div class="kick">Pick your goal</div>
+        <h2>Every goal has a plan</h2>
+        <p>Tell us what you want to change. We'll match you with the right training and coach.</p>
+      </div>
+      <div class="goals">
+        <div class="goal"><div class="n">01</div><h3>Lose weight</h3><p>Strength and cardio sessions with regular progress checks.</p></div>
+        <div class="goal"><div class="n">02</div><h3>Build muscle</h3><p>Structured weight training with guidance on form and load.</p></div>
+        <div class="goal"><div class="n">03</div><h3>Get stronger</h3><p>Compound lifts and steady progress, safely coached.</p></div>
+        <div class="goal"><div class="n">04</div><h3>Stay fit</h3><p>A routine that fits your week and keeps you moving.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK A VISIT -->
+  <section class="book" id="book">
+    <div class="wrap">
+      <div class="head">
+        <div class="kick">Free visit</div>
+        <h2>Book your first visit</h2>
+        <p>Pick a day and time. Your request goes to Goals Gym on WhatsApp, and the team confirms it with you.</p>
+      </div>
+      <div class="book-grid">
+        <form class="card" id="bookForm" novalidate>
+          <div class="row"><span class="lbl">Day</span><div class="chips" id="days"></div></div>
+          <div class="row"><span class="lbl">Time</span>
+            <div class="chips" id="times">
+              <button type="button" class="chip" aria-pressed="false" data-v="Early morning (5 to 8 AM)">Early morning<small>5 to 8 AM</small></button>
+              <button type="button" class="chip" aria-pressed="true" data-v="Morning (8 to 11 AM)">Morning<small>8 to 11 AM</small></button>
+              <button type="button" class="chip" aria-pressed="false" data-v="Afternoon (2 to 5 PM)">Afternoon<small>2 to 5 PM</small></button>
+              <button type="button" class="chip" aria-pressed="false" data-v="Evening (5 to 9 PM)">Evening<small>5 to 9 PM</small></button>
+            </div>
+          </div>
+          <div class="row"><span class="lbl">Goal</span>
+            <div class="chips" id="goalsPick">
+              <button type="button" class="chip" aria-pressed="true" data-v="Lose weight">Lose weight</button>
+              <button type="button" class="chip" aria-pressed="false" data-v="Build muscle">Build muscle</button>
+              <button type="button" class="chip" aria-pressed="false" data-v="Get stronger">Get stronger</button>
+              <button type="button" class="chip" aria-pressed="false" data-v="Stay fit">Stay fit</button>
+            </div>
+          </div>
+          <div class="two">
+            <div class="field"><label for="bName">Name</label><input id="bName" autocomplete="name" placeholder="Your name"></div>
+            <div class="field"><label for="bPhone">Phone</label><input id="bPhone" type="tel" autocomplete="tel" placeholder="07X XXX XXXX"></div>
+          </div>
+          <p class="err" id="err" role="alert"></p>
+          <button class="send" type="submit">Request my free visit on WhatsApp</button>
+          <div class="sent" id="sent"></div>
+        </form>
+        <aside class="ticket" aria-live="polite">
+          <h3>Your visit</h3>
+          <dl id="sum"></dl>
+          <p>A request, not a confirmed slot. The team replies to confirm.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOOR -->
+  <section id="floor">
+    <div class="wrap">
+      <div class="head">
+        <div class="kick">The gym</div>
+        <h2>Inside Goals Gym</h2>
+        <p>Add real photos of the floor, equipment and coaches here.</p>
+      </div>
+      <div class="floor">
+        <div class="shot wide" data-img="floor-1.jpg"><span>floor-1.jpg &middot; main floor</span></div>
+        <div class="shot" data-img="floor-2.jpg"><span>floor-2.jpg &middot; weights</span></div>
+        <div class="shot" data-img="floor-3.jpg"><span>floor-3.jpg &middot; cardio</span></div>
+        <div class="shot" data-img="floor-4.jpg"><span>floor-4.jpg &middot; coaching</span></div>
+        <div class="shot" data-img="floor-5.jpg"><span>floor-5.jpg &middot; members</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="soft" id="reviews">
+    <div class="wrap">
+      <div class="head">
+        <div class="kick">4.9 from 291 ratings</div>
+        <h2>What members say</h2>
+        <p>Add real reviews here, with members' permission.</p>
+      </div>
+      <div class="revs">
+        <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>[Real member review]</p><small>Member name</small></div>
+        <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>[Real member review]</p><small>Member name</small></div>
+        <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>[Real member review]</p><small>Member name</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit">
+    <div class="wrap">
+      <div class="head"><div class="kick">Find us</div><h2>Come and train</h2></div>
+      <div class="visit">
+        <div class="vbox">
+          <dl>
+            <div><dt>Address</dt><dd>27 Rajagiriya Rd, Colombo 10107</dd></div>
+            <div><dt>Call</dt><dd><a href="tel:+94763454848">076 345 4848</a></dd></div>
+            <div><dt>Hours</dt><dd>[Add opening hours]</dd></div>
+          </dl>
+        </div>
+        <div class="mapbox">
+          <div class="kick" style="color:var(--amber)">Directions</div>
+          <p style="margin:0;color:#d8d8dc">27 Rajagiriya Rd, Rajagiriya</p>
+          <a class="btn btn-amber" href="https://www.google.com/maps/search/?api=1&amp;query=Goals+Gym+27+Rajagiriya+Rd+Colombo" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="Goals Gym">
+    <span>&copy; Goals Gym Rajagiriya</span>
+  </div>
+</footer>
+
+<a class="float-call" href="tel:+94763454848">Call 076 345 4848</a>
+
+<script>
+var WA = '94763454848';
+var $ = function(id){ return document.getElementById(id); };
+
+/* ---- Photo slots ---- */
+document.querySelectorAll('[data-img]').forEach(function(el){
+  var src = 'img/' + el.getAttribute('data-img');
+  var p = new Image();
+  p.onload = function(){ el.style.setProperty('--img','url("'+src+'")'); el.classList.add('has-img'); };
+  p.src = src;
+});
+
+/* ---- Next 7 days ---- */
+(function(){
+  var box = $('days');
+  var names = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var now = new Date();
+  for (var i = 0; i < 7; i++) {
+    var d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip';
+    b.setAttribute('aria-pressed', i === 1 ? 'true' : 'false');
+    var label = (i === 0 ? 'Today' : i === 1 ? 'Tomorrow' : names[d.getDay()]);
+    b.setAttribute('data-v', label + ', ' + d.getDate() + ' ' + months[d.getMonth()]);
+    b.innerHTML = label + '<small>' + d.getDate() + ' ' + months[d.getMonth()] + '</small>';
+    box.appendChild(b);
+  }
+})();
+
+function picked(id){
+  var c = document.querySelector('#' + id + ' [aria-pressed="true"]');
+  return c ? c.getAttribute('data-v') : '';
+}
+['days','times','goalsPick'].forEach(function(id){
+  $(id).addEventListener('click', function(e){
+    var chip = e.target.closest('.chip'); if (!chip) return;
+    $(id).querySelectorAll('.chip').forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+    chip.setAttribute('aria-pressed','true');
+    render();
+  });
+});
+
+function render(){
+  var rows = [['Day', picked('days')], ['Time', picked('times')], ['Goal', picked('goalsPick')], ['Name', $('bName').value.trim() || '-']];
+  var dl = $('sum'); dl.innerHTML = '';
+  rows.forEach(function(r){
+    var div = document.createElement('div');
+    var dt = document.createElement('dt'); dt.textContent = r[0];
+    var dd = document.createElement('dd'); dd.textContent = r[1];
+    div.appendChild(dt); div.appendChild(dd); dl.appendChild(div);
+  });
+}
+$('bName').addEventListener('input', render);
+render();
+
+$('bookForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var name = $('bName').value.trim();
+  var phone = $('bPhone').value.replace(/\D/g,'');
+  if (!name) { $('err').textContent = 'Please enter your name.'; return; }
+  if (phone.length < 9) { $('err').textContent = 'Please enter a valid phone number.'; return; }
+  $('err').textContent = '';
+  var text = 'Hi Goals Gym, I would like to book a free visit.\nName: ' + name + '\nPhone: ' + $('bPhone').value.trim() +
+    '\nDay: ' + picked('days') + '\nTime: ' + picked('times') + '\nGoal: ' + picked('goalsPick') + '\n\nPlease confirm. Thank you.';
+  var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
+  var box = $('sent');
+  box.innerHTML = 'If WhatsApp did not open: <a target="_blank" rel="noopener">tap here to send</a>';
+  box.querySelector('a').href = url;
+  box.classList.add('show');
+  window.location.href = url;
+});
+
+/* ---- Mobile menu ---- */
+$('menuBtn').addEventListener('click', function(){ $('nav').classList.toggle('open'); });
+document.querySelectorAll('#nav a').forEach(function(a){ a.addEventListener('click', function(){ $('nav').classList.remove('open'); }); });
+</script>
+</body>
+</html>
